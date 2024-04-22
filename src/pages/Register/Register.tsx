@@ -5,6 +5,7 @@ import { ContainLanguages } from "../../languages/Languages"
 import { useEffect } from "react"
 import { BannerUi } from "../home/BannerUI/BannerUI"
 import RegisterInput from "./Input/RegisterInput"
+import { LoadingIcon } from "../../images/centerIcons"
 
 const PageRegister = () => {
   const { lang } = useParams()
@@ -20,8 +21,8 @@ const PageRegister = () => {
   // nếu ngôn ngữ = null thì xuất ra loading
   if (!language) {
     return (
-      <div className='text-4xl h-[100vh] flex items-center justify-center w-full uppercase'>
-        ...Loading
+      <div className='text-4xl h-[100vh] flex items-center justify-center w-full uppercase text-blue-400 shadow'>
+        {LoadingIcon}
       </div>
     )
   }

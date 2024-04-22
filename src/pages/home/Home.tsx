@@ -8,6 +8,7 @@ import ProductsUI from "./ProductsUI/ProductsUI"
 import { ProductsRecommendUI } from "./ProductsRecommendUI"
 import { useMyContext } from "../../context/context"
 import Category from "./Category/Category"
+import { LoadingIcon } from "../../images/centerIcons"
 const Home: FC = () => {
   const { lang } = useParams()
   const { language, setLanguage, setLangCode } = useMyContext()
@@ -20,8 +21,13 @@ const Home: FC = () => {
     }
   }, [setLanguage, setLangCode])
   // nếu ngôn ngữ = null thì xuất ra loading
+
   if (!language) {
-    return <div className='text-4xl h-[100vh] flex items-center justify-center w-full uppercase'>...Loading</div>
+    return (
+      <div className='text-4xl h-[100vh] flex items-center justify-center w-full uppercase text-blue-400 shadow'>
+        {LoadingIcon}
+      </div>
+    )
   }
   return (
     <div className=''>

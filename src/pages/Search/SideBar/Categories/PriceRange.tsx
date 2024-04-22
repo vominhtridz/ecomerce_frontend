@@ -16,6 +16,7 @@ const PriceRange = () => {
           onChange={handleChangeFrom}
           value={valueFrom}
           type='number'
+          required
           placeholder='Từ'
           className='text-sm outline-none px-2 py-1 w-1/2'
         />
@@ -24,6 +25,7 @@ const PriceRange = () => {
           value={valueTo}
           onChange={handleChangeTo}
           type='number'
+          required
           placeholder='Đến'
           className='text-sm outline-none px-2 py-1 w-1/2'
         />

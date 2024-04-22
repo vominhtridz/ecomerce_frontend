@@ -19,7 +19,7 @@ const ReviewComment = ({ handleLike, color }: ReviewCommentTypes) => {
       </div>
       {/* Hình ảnh zoom */}
       <div className='my-2 '>
-        <div className='w-[20rem] px-3 relative  rounded-md h-[25rem]'>
+        <div className='w-[26rem] px-3 relative  rounded-sm h-[25rem]'>
           <LeftBtn />
           <img src={img} className='w-full h-full ' alt='' />
           <RightBtn />

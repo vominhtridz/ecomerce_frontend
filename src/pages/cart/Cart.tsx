@@ -4,10 +4,11 @@ import { useMyContext } from "../../context/context"
 import { ContainLanguages } from "../../languages/Languages"
 import { languageType } from "../../typescript/languageType"
 import { useEffect } from "react"
-import ShopingCart from "./ShopingCart/ShopingCart"
+
 import MoreProducts from "./MoreProducts/MoreProducts"
-import { BannerUi } from "../home/BannerUI/BannerUI"
-import SummaryProducts from "./SummaryProducts/SummaryProducts"
+import ShoppingCart from "./ShoppingCart/ShoppingCart"
+import ShoppingPayment from "./ShoppingPayment/ShoppingPayment"
+import { LoadingIcon } from "../../images/centerIcons"
 
 const PageCart = () => {
   const { lang } = useParams()
@@ -22,17 +23,17 @@ const PageCart = () => {
   }, [setLanguage, setLangCode])
   // nếu ngôn ngữ = null thì xuất ra loading
   if (!language) {
-    return <div className='text-4xl h-[100vh] flex items-center justify-center w-full uppercase'>...Loading</div>
+    return (
+      <div className='text-4xl h-[100vh] flex items-center text-blue-400 shadow justify-center w-full uppercase'>
+        {LoadingIcon}
+      </div>
+    )
   }
   return (
-    <div className=''>
-      <div className=' px-10 py-6 mb-10'>
-        <section className=' px-6 flex max-lg:flex-col shadow-lg transition duration-500 rounded-md justify-between'>
-          <ShopingCart />
-          <SummaryProducts />
-        </section>
-        <MoreProducts />
-      </div>
+    <div className='flex flex-col px-10 py-6 mb-10'>
+      <ShoppingCart />
+      <ShoppingPayment />
+      <MoreProducts />
     </div>
   )
 }

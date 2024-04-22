@@ -40,7 +40,7 @@ const BirthdayField: FC<BirthdayFieldTypes> = ({
         <label className='mx-3 text-black ' key={index}>
           <select
             value={birthday.feild}
-            className='text-black border hover:cursor-pointer outline-red-200  border-slate-300 rounded-md px-6 py-1'
+            className='text-black border hover:cursor-pointer outline-red-200  border-slate-300 rounded-sm px-6 py-1'
             onChange={birthday.handleChange}
           >
             {birthday.day}

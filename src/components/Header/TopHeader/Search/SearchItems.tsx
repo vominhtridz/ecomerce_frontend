@@ -20,7 +20,6 @@ const SearchItems: FC<SearchItemsTypes> = ({ SearchInput, ChangeSearch, handleFo
     e.stopPropagation()
     navigate(`${`/${langCode}/search`}`)
 
-    console.log("hello1")
   }
   return (
     <div className='absolute w-full ' onBlur={handleBlur}>

@@ -36,28 +36,22 @@ export function ProductsRecommendUI() {
         <section key={index} className='w-3/6 max-md:w-full pr-4 max-md:mt-10'>
           <nav className='flex items-center  justify-between '>
             <h2 className='uppercase text-2xl font-bold text-slate-700 p-2.5 max-sm:text-[13px] max-lg:text-base max-'>
-              <strong className='font-bold pr-2 text-orange-600'>
-                {item.title.bold}
-              </strong>
+              <strong className='font-bold pr-2 text-orange-600'>{item.title.bold}</strong>
               {item.title.provide}
             </h2>
             <span className='flex items-center text-base max-lg:text-sm '>
               <p className=' mr-6 text-lg '>
                 <strong className='pr-1'>1</strong>/ {item.num}
               </p>
-              <p className='flex items-center rounded-md border border-solid  border-slate-300 mr-2'>
-                <button className='p-1.5   border-r border-solid border-slate-200'>
-                  {ArrowLeft}
-                </button>
+              <p className='flex items-center rounded-sm border border-solid  border-slate-300 mr-2'>
+                <button className='p-1.5   border-r border-solid border-slate-200'>{ArrowLeft}</button>
                 <button className='p-1.5  '>{ArrowRight}</button>
               </p>
             </span>
           </nav>
           <div className='flex items-center'>
             <img src={item.imgs.img1} alt='' className='md:w-3/6 max-md:w-1/2 px-2' />
-            {item.imgs.img2 && (
-              <img src={item.imgs.img2} alt='' className='md:w-3/6 max-md:w-1/2 px-2' />
-            )}
+            {item.imgs.img2 && <img src={item.imgs.img2} alt='' className='md:w-3/6 max-md:w-1/2 px-2' />}
           </div>
         </section>
       )

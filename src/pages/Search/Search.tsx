@@ -5,6 +5,7 @@ import { languageType } from "../../typescript/languageType"
 import { useMyContext } from "../../context/context"
 import SideBar from "./SideBar/SideBar"
 import SearchContent from "./Content/SearchContent"
+import { LoadingIcon } from "../../images/centerIcons"
 
 export const PageSearch = () => {
   const { lang } = useParams()
@@ -19,7 +20,11 @@ export const PageSearch = () => {
   }, [setLanguage, setLangCode])
   // nếu ngôn ngữ = null thì xuất ra loading
   if (!language) {
-    return <div className='text-4xl h-[100vh] flex items-center  justify-center w-full uppercase'>...Loading</div>
+    return (
+      <div className='text-4xl h-[100vh] flex items-center text-blue-400 shadow  justify-center w-full uppercase'>
+        {LoadingIcon}
+      </div>
+    )
   }
   return (
     <section className=' px-10 py-10 flex bg-slate-50'>

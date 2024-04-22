@@ -5,7 +5,7 @@ const UserVoucher = () => {
       <h2 className='text-base font-semibold '>Voucher</h2>
       <label
         htmlFor=''
-        className=' flex items-center my-2 w-[20rem] justify-between text-red-500 border  border-red-300 rounded-sm bg-red-50 py-3 px-1.5'
+        className=' flex items-center my-2 w-[26rem] justify-between text-red-500 border  border-red-300 rounded-sm bg-red-50 py-3 px-1.5'
       >
         <nav className='text-sm '>
           <p className=''>Giảm 2k</p>

@@ -562,3 +562,69 @@ export const WarningIcon = (
     ></path>
   </svg>
 )
+export const LocationIcon = (
+  <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'>
+    <path
+      fill='currentColor'
+      d='M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7'
+    ></path>
+  </svg>
+)
+export const VoucherIcon = (
+  <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'>
+    <path
+      fill='currentColor'
+      d='M4 4a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2a2 2 0 0 1-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 1-2-2a2 2 0 0 1 2-2V6a2 2 0 0 0-2-2zm11.5 3L17 8.5L8.5 17L7 15.5zm-6.69.04c.98 0 1.77.79 1.77 1.77a1.77 1.77 0 0 1-1.77 1.77c-.98 0-1.77-.79-1.77-1.77a1.77 1.77 0 0 1 1.77-1.77m6.38 6.38c.98 0 1.77.79 1.77 1.77a1.77 1.77 0 0 1-1.77 1.77c-.98 0-1.77-.79-1.77-1.77a1.77 1.77 0 0 1 1.77-1.77'
+    ></path>
+  </svg>
+)
+export const TrunkFast = (
+  <svg xmlns='http://www.w3.org/2000/svg' width='1.25em' height='1em' viewBox='0 0 640 512'>
+    <path
+      fill='currentColor'
+      d='M112 0C85.5 0 64 21.5 64 48v48H16c-8.8 0-16 7.2-16 16s7.2 16 16 16h256c8.8 0 16 7.2 16 16s-7.2 16-16 16H48c-8.8 0-16 7.2-16 16s7.2 16 16 16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H16c-8.8 0-16 7.2-16 16s7.2 16 16 16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H64v128c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48zm432 237.3V256H416v-96h50.7zM160 368a48 48 0 1 1 0 96a48 48 0 1 1 0-96m272 48a48 48 0 1 1 96 0a48 48 0 1 1-96 0'
+    ></path>
+  </svg>
+)
+export const LoadingIcon = (
+  <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'>
+    <g fill='none' stroke='currentColor' strokeLinecap='round' strokeWidth={2}>
+      <path
+        strokeDasharray={60}
+        strokeDashoffset={60}
+        strokeOpacity={0.3}
+        d='M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z'
+      >
+        <animate fill='freeze' attributeName='stroke-dashoffset' dur='1.3s' values='60;0'></animate>
+      </path>
+      <path strokeDasharray={15} strokeDashoffset={15} d='M12 3C16.9706 3 21 7.02944 21 12'>
+        <animate fill='freeze' attributeName='stroke-dashoffset' dur='0.3s' values='15;0'></animate>
+        <animateTransform
+          attributeName='transform'
+          dur='1.5s'
+          repeatCount='indefinite'
+          type='rotate'
+          values='0 12 12;360 12 12'
+        ></animateTransform>
+      </path>
+    </g>
+  </svg>
+)
+export const AddMemberIcon = (
+  <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'>
+    <path
+      fill='currentColor'
+      d='M18 14v-3h-3V9h3V6h2v3h3v2h-3v3zm-9-2q-1.65 0-2.825-1.175T5 8q0-1.65 1.175-2.825T9 4q1.65 0 2.825 1.175T13 8q0 1.65-1.175 2.825T9 12m-8 8v-2.8q0-.85.438-1.562T2.6 14.55q1.55-.775 3.15-1.162T9 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T17 17.2V20z'
+    ></path>
+  </svg>
+)
+export const CheckedIcon = (
+  <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'>
+    <path
+      fill='currentColor'
+      fillRule='evenodd'
+      d='M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z'
+      clipRule='evenodd'
+    ></path>
+  </svg>
+)

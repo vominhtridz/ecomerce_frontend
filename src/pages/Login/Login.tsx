@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import { BannerUi } from "../home/BannerUI/BannerUI"
 
 import LoginInput from "./login_input/LoginInput"
+import { LoadingIcon } from "../../images/centerIcons"
 
 const PageLogin = () => {
   const { lang } = useParams()
@@ -21,8 +22,8 @@ const PageLogin = () => {
   // nếu ngôn ngữ = null thì xuất ra loading
   if (!language) {
     return (
-      <div className='text-4xl h-[100vh] flex items-center justify-center w-full uppercase'>
-        ...Loading
+      <div className='text-4xl h-[100vh] flex items-center text-blue-400 shadow justify-center w-full uppercase'>
+        {LoadingIcon}
       </div>
     )
   }

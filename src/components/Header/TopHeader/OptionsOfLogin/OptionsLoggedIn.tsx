@@ -1,50 +1,58 @@
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useMyContext } from "../../../../context/context"
 import Cookies from "universal-cookie"
 import { MouseEvent } from "react"
 interface setLoggedInTypes {
   setLoggedIn: (loggin: boolean) => void
 }
-const getOptionsLoggedIn = {
-  myAccount: "Tài khoản của tôi",
-  Shopping: "Đơn Mua",
-  loggOut: "Đăng Xuất",
-}
+
 const OptionLoggedIn = ({ setLoggedIn }: setLoggedInTypes) => {
   const cookies = new Cookies()
-  const navigate = useNavigate()
   const { langCode } = useMyContext()
-
-  const handleLogOut = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    e.stopPropagation()
+  const handleLogOut = () => {
     cookies.remove("loggedIn", { path: "/" })
     localStorage.removeItem("bacsicUsers")
-    navigate(`/${langCode}`)
     setLoggedIn(false)
   }
-  const handleShoping = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    e.stopPropagation()
 
-    navigate(`/${langCode}/cart`)
-  }
-  const handleNaviMyAccount = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    e.stopPropagation()
-    navigate(`/${langCode}/user/account/profile`)
-  }
+  const ManageOptionsLoggedIn = [
+    {
+      title: "Tài khoản của tôi",
+      route: "/user/account/profile",
+    },
+    {
+      title: "Đăng kí bán hàng",
+      route: "/selling/portal/100",
+    },
+    {
+      title: "Đơn mua",
+      route: "/cart",
+    },
+    {
+      title: "Thoát",
+      FunctionHandle: handleLogOut,
+    },
+  ]
+  const getOptionsLoggedIn = () =>
+    ManageOptionsLoggedIn.map((option, index) => {
+      return (
+        <Link
+          to={`/${langCode}${option?.route}`}
+          key={index}
+          className='hover:bg-slate-50 py-1.5 whitespace-nowrap  block hover:text-green-500 w-full '
+          onClick={option?.FunctionHandle}
+        >
+          {option.title}
+        </Link>
+      )
+    })
   return (
-    <div className='z-30 font-normal w-full py-2 text-sm absolute b-0 left-0 flex-wrap shadow-lg transition duration-500 rounded lg bg-white'>
-      <button className='hover:bg-slate-50 py-1.5 block hover:text-green-500 w-full ' onClick={handleNaviMyAccount}>
-        {getOptionsLoggedIn.myAccount}
-      </button>
-      <button className='hover:bg-slate-50 py-1.5 block hover:text-green-500  w-full' onClick={handleShoping}>
-        {getOptionsLoggedIn.Shopping}
-      </button>
-      <button className='hover:bg-slate-50 py-1.5 block hover:text-green-500  w-full' onClick={handleLogOut}>
-        {getOptionsLoggedIn.loggOut}
-      </button>
+    <div
+      onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
+      className=' font-normal w-[8.5rem] py-2 text-sm absolute b-0 right-0 flex-wrap shadow-lg transition duration-500 rounded lg
+        bg-white'
+    >
+      {getOptionsLoggedIn()}
     </div>
   )
 }

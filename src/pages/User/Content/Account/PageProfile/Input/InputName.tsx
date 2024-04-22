@@ -28,7 +28,7 @@ const InputName: FC<InputNameTypes> = ({ inputName, ChangeInputName }) => {
           autoComplete='new-password'
           type='text'
           className='outline-none w-full p-2 text-sm transition duration-500   border my-2  text-black border-slate-400 rounded-sm '
-          placeholder='Nhập tên của bạn...'
+          placeholder='Nhập vào của bạn...'
           onChange={ChangeInputName}
           value={inputName === "" ? userName : inputName}
           required

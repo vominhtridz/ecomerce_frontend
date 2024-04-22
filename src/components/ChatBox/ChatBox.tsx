@@ -12,7 +12,7 @@ const ChatBox = () => {
       {!visibleMess && (
         <button
           onClick={handleShowMessage}
-          className='flex text-green-700 text-lg uppercase font-semibold bg-white shadow fixed bottom-0 right-6 items-center justify-center px-2 py-2 rounded-sm '
+          className='flex text-green-700 text-lg  uppercase font-semibold bg-white shadow fixed bottom-0 right-6 items-center justify-center px-2 py-2 rounded-sm '
         >
           <p className='text-2xl px-3'>{MessageIcon}</p>
           Chat

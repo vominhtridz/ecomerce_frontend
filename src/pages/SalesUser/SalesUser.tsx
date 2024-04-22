@@ -11,6 +11,7 @@ import { ContainLanguages } from "../../languages/Languages"
 import { languageType } from "../../typescript/languageType"
 import { useEffect } from "react"
 import SearchResult from "../Search/Content/SearchResult/SearchResult"
+import { LoadingIcon } from "../../images/centerIcons"
 
 function SalesUser() {
   const { lang } = useParams()
@@ -25,7 +26,11 @@ function SalesUser() {
   }, [setLanguage, setLangCode])
   // nếu ngôn ngữ = null thì xuất ra loading
   if (!language) {
-    return <div className='text-4xl h-[100vh] flex items-center justify-center w-full uppercase'>...Loading</div>
+    return (
+      <div className='text-4xl h-[100vh] flex items-center justify-center text-blue-400 shadow w-full uppercase'>
+        {LoadingIcon}
+      </div>
+    )
   }
   return (
     <div className=''>

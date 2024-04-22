@@ -1,6 +1,6 @@
 import { useMyContext } from "../../../../../context/context"
 import ShowAdress from "./ShowAddress/ShowAddress"
-import AddNewAddress from "./button/AddNewAddress"
+import AddNewAddress from "../../../../../components/button/AddNewAddress"
 
 export const PageAddress = () => {
   const { langCode } = useMyContext()

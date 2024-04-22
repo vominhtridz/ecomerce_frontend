@@ -61,6 +61,7 @@ const FormMessageChat = ({ handleSubmitMess, changeChatInput, ChatBotInput }: Fo
       <div className='' onScroll={handleScroll}>
         <p className='w-full border-t border-slate-300 hover:cursor-row-resize pt-1.5'></p>
         <input
+          required
           value={ChatBotInput}
           onChange={changeChatInput}
           type='text'

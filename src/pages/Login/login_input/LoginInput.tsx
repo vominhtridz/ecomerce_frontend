@@ -27,7 +27,7 @@ const LoginInput = () => {
   }, [])
   useEffect(() => {
     if (email && pwd) {
-      UserLoggedIn({ email, pwd }).then(res => console.log(res))
+      UserLoggedIn({ email, pwd })
     }
   }, [setDataUser])
 
@@ -52,8 +52,9 @@ const LoginInput = () => {
     UserLoggedIn({ email, pwd }).then(res => {
       const basicUsers = JSON.stringify({
         userName: res.data[0].userName,
-        id: res.data[0].userID,
+        userID: res.data[0].userID,
         LoggedIn: true,
+        email: email,
       })
       setDataUser(res.data[0])
       localStorage.setItem("basicUsers", basicUsers)

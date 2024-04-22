@@ -4,6 +4,7 @@ const ChatBoxInput = ({ ChatInput, handleFocus, handleBlur, handleChange }: Chat
   return (
     <input
       type='text'
+      required
       placeholder='Tìm kiếm'
       value={ChatInput}
       onFocus={handleFocus}

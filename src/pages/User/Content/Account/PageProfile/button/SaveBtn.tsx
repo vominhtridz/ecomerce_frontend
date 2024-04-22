@@ -6,7 +6,7 @@ const SaveInfoBtn = () => {
   const navigate = useNavigate()
   const handleSavesInfo = () => {}
   return (
-    <button className='px-6 py-2 ml-16 bg-red-500 my-6  text-white rounded-md' onClick={handleSavesInfo}>
+    <button className='px-6 py-2 ml-16 bg-red-500 my-6  text-white rounded-sm' onClick={handleSavesInfo}>
       Lưu
     </button>
   )

@@ -8,7 +8,7 @@ import MainInfoProduct from "./MainInfoProduct/MainInfoProduct"
 import InforUserSell from "./InforUserSell/InforUserSell"
 import DetailProduct from "./DetailProduct/DetailProduct"
 import ProductReviews from "./ProductReviews/ProductReviews"
-import { NoSlashRight } from "../../images/centerIcons"
+import { LoadingIcon, NoSlashRight } from "../../images/centerIcons"
 import MoreProducts from "../cart/MoreProducts/MoreProducts"
 
 const PageInformationProduct = () => {
@@ -24,7 +24,11 @@ const PageInformationProduct = () => {
   }, [setLanguage, setLangCode])
   // nếu ngôn ngữ = null thì xuất ra loading
   if (!language) {
-    return <div className='text-4xl h-[100vh] flex items-center justify-center w-full uppercase'>...Loading</div>
+    return (
+      <div className='text-4xl h-[100vh] flex items-center justify-center w-full text-blue-400 shadow uppercase'>
+        {LoadingIcon}
+      </div>
+    )
   }
   return (
     <div className='w-full px-14 py-4'>

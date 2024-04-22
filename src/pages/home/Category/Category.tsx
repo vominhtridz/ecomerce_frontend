@@ -10,7 +10,6 @@ const Category = () => {
   const UlRef = useRef<HTMLUListElement>(null)
   function getCategory() {
     return manageCategory.map((category, index) => {
-      console.log(index)
       return (
         <Link
           to={`/${langCode}${category.route}`}

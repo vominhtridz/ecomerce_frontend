@@ -14,17 +14,13 @@ const LanguageSelector = () => {
   function ChangeLanguages(e: ChangeEvent<HTMLSelectElement>) {
     const ShortCodeLang = e.target.value
     navigate(`/${ShortCodeLang}`)
+    window.location.reload()
   }
 
   function getOptions() {
     return langs.map((lang, index) => {
       return (
-        <option
-          className='outline-slate-100 border-0 '
-          selected={langCode == lang.shortCode}
-          key={index}
-          value={lang.shortCode}
-        >
+        <option className='outline-slate-100 border-0 ' key={index} value={lang.shortCode}>
           {lang.label}
         </option>
       )
@@ -35,6 +31,7 @@ const LanguageSelector = () => {
     <select
       className='max-md:p-1 outline-none border border-solid border-black  p-2 '
       onChange={ChangeLanguages}
+      defaultValue={langCode}
     >
       {getOptions()}
     </select>

@@ -9,7 +9,7 @@ const EmailInput: FC<EmailInputTypes> = ({ email, ChangeEmail }) => {
     <input
       autoComplete='new-password'
       type='email'
-      className='w-full p-4 transition duration-500   border my-  text-black border-slate-400 rounded-md bg-[#e8f0fe]'
+      className='w-full p-4 outline-blue-300 transition duration-500   border my-  text-black border-slate-400 rounded-sm bg-[#e8f0fe]'
       placeholder='Enter Your Email...'
       onChange={ChangeEmail}
       value={email}

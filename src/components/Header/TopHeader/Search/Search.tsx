@@ -1,10 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { SearchIcon } from "../../../../images/centerIcons"
 
-import { useMyContext } from "../../../../context/context"
+
 import SearchItems from "./SearchItems"
 const Search = () => {
-  const { langCode } = useMyContext()
   const [SearchInput, setSearchInput] = useState<string>("")
   const [checkFocus, setCheckFocus] = useState<boolean>(false)
   const HandleSearch = (e: FormEvent) => {

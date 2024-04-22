@@ -17,10 +17,10 @@ const TopHeader = () => {
         <OptionsOfLogin />
         <LanguageSelector />
       </div>
-      <section className='flex items-center max-lg:flex-wrap px-6 max-sm:px-1.5 py-2 text-sm font-semibol'>
+      <section className='flex items-center max-lg:flex-wrap px-6 max-sm:px-1.5  text-sm font-semibol'>
         <button
           onClick={handleNavi}
-          className='w-[400px] max-lg:w-[300px] justify-between flex items-center
+          className='w-[350px] max-lg:w-[300px] justify-between flex items-center
           max-sm:w-[120px] max-md:w-[200px] py-1'
         >
           <img src={logo} alt='logo' className='w-full' />

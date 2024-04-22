@@ -16,7 +16,7 @@ const CustomizeMessShop = () => {
   // xử lý khi gửi tin nhắn
   function handleSubmitMess(e: FormEvent) {
     e.preventDefault()
-    console.log()
+
   }
 
   const changeChatInput = (e: ChangeEvent<HTMLInputElement>) => setChatBotInput(e.target.value)

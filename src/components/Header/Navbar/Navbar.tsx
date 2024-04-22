@@ -25,7 +25,7 @@ const NavBar = () => {
     }
   }
   return (
-    <nav className={`  px-2 overflow-hidden  w-full relative user `}>
+    <nav className={`z-10 px-2 overflow-hidden  w-full relative user `}>
       <div
         ref={NavbarRef}
         className='max-lg:bg-white  flex items-center scrollbar-w-3 overflow-x-auto max-md:ml-6 list-none transition  duration-500  max-lg:text-sm '

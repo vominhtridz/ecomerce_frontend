@@ -4,7 +4,6 @@ const SetUpUserImage = () => {
   const [file, setFile] = useState<string>("")
   const fileUserImg = useRef<HTMLInputElement>(null)
   function handleChange(e) {
-    console.log(e.target.files)
     setFile(URL.createObjectURL(e.target.files[0]))
   }
   const handleSetImage = () => fileUserImg.current?.click()
@@ -25,7 +24,7 @@ const SetUpUserImage = () => {
       <input type='file' multiple onChange={handleChange} ref={fileUserImg} name='fileUserImg' className='hidden' />
       <label
         htmlFor='fileUserImg'
-        className='border border-slate-400  rounded-md cursor-pointer inline-block hover:bg-slate-50 px-4 py-1.5 text-sm'
+        className='border border-slate-400  rounded-sm cursor-pointer inline-block hover:bg-slate-50 px-4 py-1.5 text-sm'
         onClick={handleSetImage}
       >
         Chọn Ảnh

@@ -6,6 +6,7 @@ import { useMyContext } from "../../context/context"
 import SideBar from "./SideBar/SideBar"
 import PageVoucherStore from "./Content/SpecialOffers/VoucherStore/PageVoucherStore"
 import PageUserNotifyCations from "./Content/Account/NotifyCations/NotifyCations"
+import { LoadingIcon } from "../../images/centerIcons"
 
 export const PageUsers = () => {
   const { lang } = useParams()
@@ -21,7 +22,11 @@ export const PageUsers = () => {
   }, [setLanguage, setLangCode])
   // nếu ngôn ngữ = null thì xuất ra loading
   if (!language) {
-    return <div className='text-4xl h-[100vh] flex items-center justify-center w-full uppercase'>...Loading</div>
+    return (
+      <div className='text-4xl h-[100vh] flex items-center justify-center text-blue-400 shadow w-full uppercase'>
+        {LoadingIcon}
+      </div>
+    )
   }
   return (
     <section className='flex  px-10 py-14 '>
