@@ -14,12 +14,10 @@ const Category = () => {
         <Link
           to={`/${langCode}${category.route}`}
           key={index}
-          className='border    hover:shadow-lg border-l-0 border-b-0  border-slate-200 h-1/2 justify-center items-center flex flex-col rounded-sm px-2 w-[125.4px]'
+          className='border w-[11.11%]  hover:border border-gray-200  hover:shadow border-l-0 border-b-0   h-1/2 justify-center items-center flex flex-col rounded-sm px-3'
         >
-          <div className='w-[107px] h-[107px]'>
-            <img src={category.image} alt='' className='w-full h-full' />
-          </div>
-          <p className='text-sm'>{category.name}</p>
+          <img src={category.image} alt='' className='w-full h-1/2' />
+          <p className='text-[13px] pt-2'>{category.name}</p>
         </Link>
       )
     })
@@ -36,20 +34,22 @@ const Category = () => {
     }
   }
   return (
-    <div className=' mx-10 my-10 p-3 relative bg-white rounded-sm'>
-      <h2 className='px-2 text-lg text-slate-500 text-left uppercase'>danh mục</h2>
-      <LeftBtn HandleMoveLeft={HandleMoveLeft} />
-      <section className='overflow-hidden '>
-        <ul
-          ref={UlRef}
-          className='list-none h-[26rem] transition duration-500 
-           flex flex-col   p-4 rouned-sm bg-white flex-wrap overflow-hidden
+    <div className=' px-10 my-10 p-3  bg-white rounded-sm'>
+      <h2 className='px-2 text-2xl text-slate-500 text-left uppercase'>danh mục</h2>
+      <div className='relative '>
+        <LeftBtn HandleMoveLeft={HandleMoveLeft} />
+        <section className='overflow-hidden z-10 '>
+          <ul
+            ref={UlRef}
+            className=' relative list-none w-full h-[26rem] transition duration-500 
+           flex flex-col animation  p-4 rouned-sm bg-white  flex-wrap overflow-hidden
         '
-        >
-          {getCategory()}
-        </ul>
-      </section>
-      <RightBtn HandleMoveRight={HandleMoveRight} />
+          >
+            {getCategory()}
+          </ul>
+        </section>
+        <RightBtn HandleMoveRight={HandleMoveRight} />
+      </div>
     </div>
   )
 }

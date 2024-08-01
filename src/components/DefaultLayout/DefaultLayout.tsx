@@ -4,29 +4,35 @@ import Footer from "../Footer/Footer"
 import { Outlet } from "react-router-dom"
 import { useMyContext } from "../../context/context"
 import ChatBox from "../ChatBox/ChatBox"
-import AddShopAddress from "../AddShopAddress/AddShopAddress"
-import { GetSellerAddress } from "..//..//apis/apis"
+import CuccessFullLabel from "../Label/CuccessFullLabel"
+import FailureFullLabel from "../Label/FailureFullLabel"
+import { GetUserCurrent } from "@/apis/apis"
 const DefaultLayout: FC = () => {
-  const { language, shopAddress, setDataUser, dataUser, setSellerAddress } = useMyContext()
-  //  set default user data
+  const { dataUser, language, setDataUser, visiCuccessLabel, visilFailLabel, messageLabel } = useMyContext()
   useEffect(() => {
-    const basicUsers = JSON.parse(localStorage.getItem("basicUsers") || "")
-    if (basicUsers) {
-      setDataUser(basicUsers)
+    try {
+      const basicUsers = JSON.parse(localStorage.getItem("basicUsers") as string)
+      if (basicUsers) {
+        GetUserCurrent({ userid: basicUsers?.userid })
+          .then(res => {
+            setDataUser(res.data[0])
+          })
+          .catch(err => console.log(err))
+      }
+    } catch (error) {
+      console.error("Error parsing JSON:", error)
     }
-    const UserID = { userID: dataUser?.userID || 0 }
-    GetSellerAddress(UserID).then(res => setSellerAddress(res.data[0]))
-  }, [])
-
+  }, [dataUser?.email, dataUser?.birthday, dataUser?.gender, dataUser?.phonenumber, dataUser?.img])
   return (
-    <div className='bg-[rgba(0,0,0,0.03)] '>
+    <div className=' '>
       {language && <Header />}
       <div className='body max-lg:mt-[260px]   max-md:mt-[150px] lg:mt-[6.2rem]'>
         <Outlet />
       </div>
       {language && <Footer />}
       <ChatBox />
-      {shopAddress && <AddShopAddress />}
+      {visiCuccessLabel && <CuccessFullLabel text={messageLabel} />}
+      {visilFailLabel && <FailureFullLabel text={messageLabel} />}
     </div>
   )
 }

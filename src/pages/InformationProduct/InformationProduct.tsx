@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import NavLinkPage from "./NavLinkPage"
 import { useMyContext } from "../../context/context"
 import { ContainLanguages } from "../../languages/Languages"
-import { languageType } from "../../typescript/languageType"
+import { languageType } from "../../typescript/language"
 import { useEffect } from "react"
 import MainInfoProduct from "./MainInfoProduct/MainInfoProduct"
 import InforUserSell from "./InforUserSell/InforUserSell"
@@ -24,11 +24,7 @@ const PageInformationProduct = () => {
   }, [setLanguage, setLangCode])
   // nếu ngôn ngữ = null thì xuất ra loading
   if (!language) {
-    return (
-      <div className='text-4xl h-[100vh] flex items-center justify-center w-full text-blue-400 shadow uppercase'>
-        {LoadingIcon}
-      </div>
-    )
+    return <div className='text-4xl h-[100vh] flex items-center justify-center w-full text-blue-400 shadow uppercase'>{LoadingIcon}</div>
   }
   return (
     <div className='w-full px-14 py-4'>
@@ -41,7 +37,6 @@ const PageInformationProduct = () => {
       <InforUserSell />
       <DetailProduct />
       <ProductReviews />
-
       <MoreProducts />
     </div>
   )

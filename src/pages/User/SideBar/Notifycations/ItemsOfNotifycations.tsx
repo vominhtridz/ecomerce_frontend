@@ -15,8 +15,8 @@ const GetItemsOfNotifycations = [
     title: "Cập nhật ví",
   },
   {
-    route: "/updatelivegood",
-    title: "Cập nhật Livegood",
+    route: "/updateSango",
+    title: "Cập nhật Sango",
   },
 ]
 

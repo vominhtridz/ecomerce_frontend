@@ -1,41 +1,34 @@
-import logo from "..//..//..//images/logo/logo.png"
 import Search from "./Search/Search"
-import CartLink from "./CartLink"
 import LanguageSelector from "../LanguageSelector/LanguageSelector"
 import OptionsOfLogin from "./OptionsOfLogin/OptionsOfLogin"
-import { useMyContext } from "../../../context/context"
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { useMyContext } from "@/context/context"
+import { CartImg } from "@/images/centerIcons"
+import Notification from "./Notification"
+
 const TopHeader = () => {
   const { langCode } = useMyContext()
-  const navigate = useNavigate()
-  const handleNavi = () => {
-    navigate(`/${langCode}`)
-  }
   return (
-    <div className=''>
+    <div className='fixed top-0  left-0 right-0 z-20 bg-white py-1  '>
       <div className='w-full max-md:text-[12px] lg:hidden max-md:pr-2 justify-end pr-6 flex items-center'>
         <OptionsOfLogin />
         <LanguageSelector />
-      </div>
+      </div>  
       <section className='flex items-center max-lg:flex-wrap px-6 max-sm:px-1.5  text-sm font-semibol'>
-        <button
-          onClick={handleNavi}
-          className='w-[350px] max-lg:w-[300px] justify-between flex items-center
-          max-sm:w-[120px] max-md:w-[200px] py-1'
-        >
-          <img src={logo} alt='logo' className='w-full' />
-          <div className='lg:hidden'>
-            <CartLink />
-          </div>
-        </button>
-        <div className='max-lg:w-full flex justify-items-center max-lg:hidden'>
-          <CartLink />
-        </div>
+        <Link to='/' className='text-3xl font-semibold text-green-600 px-4 py-2 '>
+          Sango
+        </Link>
         <Search />
-
-        <div className='flex items-center max-lg:hidden'>
-          <OptionsOfLogin />
-          <LanguageSelector />
+        <div className=' flex items-center C'>
+          <Notification />
+          <Link to={`/${langCode}/cart`} className='max-lg:w-full whitespace-nowrap pr-6 pl-2 flex justify-items-center max-lg:hidden'>
+            <p className=' px-1 text-xl text-green-500'>{CartImg}</p>
+            Giỏ hàng
+          </Link>
+          <div className='flex items-center max-lg:hidden'>
+            <OptionsOfLogin />
+            <LanguageSelector />
+          </div>
         </div>
       </section>
     </div>

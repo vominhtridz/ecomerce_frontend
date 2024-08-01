@@ -1,12 +1,19 @@
-import { FC } from "react"
+import { LoadingIcon } from "@/images/centerIcons"
+import { FC, FormEvent } from "react"
 
 interface NextBtnTypes {
-  handleNext: () => void
+  handleNext: (e: FormEvent<HTMLButtonElement | HTMLFormElement>) => void
+  loading?: boolean
 }
-const NextBtn: FC<NextBtnTypes> = ({ handleNext }) => {
+const NextBtn: FC<NextBtnTypes> = ({ handleNext, loading }) => {
   return (
-    <button onClick={handleNext} className='rounded-sm text-sm text-white bg-red-500 px-4 py-2'>
-      Tiếp theo
+    <button
+      disabled={loading == true ? true : false}
+      onClick={handleNext}
+      type='submit'
+      className={` rounded-sm text-sm text-white bg-green-600 px-4 py-2`}
+    >
+      {loading ? <p className='text-lg flex items-center justify-center'>{LoadingIcon}</p> : "Tiếp theo"}
     </button>
   )
 }

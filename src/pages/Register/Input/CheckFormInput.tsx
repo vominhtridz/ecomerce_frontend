@@ -1,35 +1,27 @@
+import CheckFormInputTypes from "@/typescript/CheckFormInputType"
 import { FC } from "react"
-
-interface CheckFormInputTypes {
-  emailError: boolean
-  pwdError: boolean
-  conFirmPwdError: boolean
-  AccountAvailable: boolean
-}
-
 const CheckFormInput: FC<CheckFormInputTypes> = ({
   emailError,
   pwdError,
   conFirmPwdError,
-  AccountAvailable,
+  phonenumErr,
+  usernameErr,
 }) => {
   return (
-    <p className='flex justify-center flex-col items-center my-6 pt-4 text-red-500'>
+    <p className='flex justify-center flex-col items-center   text-red-500'>
       {emailError && (
-        <span className='block'>
-          Email: obligatory have @gmail.com example jest@gmail.com.
-        </span>
+        <span className='block'>- Email is reguired: obligatory have @gmail.com example jest@gmail.com.</span>
+      )}
+      {phonenumErr && <span className='block'>- Phone Number should be 10 digits</span>}
+      {usernameErr && (
+        <span className='block'>- User must be not have spaces and contains accents ex:vantruong123</span>
       )}
       {pwdError && (
         <span className='block'>
-          Password: must contain at least one letter and one number, and be at least 6
-          characters long.
+          - Password: must contain at least one letter and one number, and be at least 6 characters long.
         </span>
       )}
-      {conFirmPwdError && (
-        <span className='block'>password: does not match with confirm Password. </span>
-      )}
-      {AccountAvailable && <span className='block'>Email: was Available in System</span>}
+      {conFirmPwdError && <span className='block'>- password: does not match with confirm Password. </span>}
     </p>
   )
 }

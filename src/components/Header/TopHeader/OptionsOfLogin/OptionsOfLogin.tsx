@@ -1,65 +1,51 @@
-import { useNavigate } from "react-router-dom"
-import { LoginIcon } from "../../../../images/centerIcons"
+import { Link, useNavigate } from "react-router-dom"
 import { useMyContext } from "../../../../context/context"
-import { MouseEvent, useEffect, useState } from "react"
-import Cookies from "universal-cookie"
-
-import { GetOptionsOflogins } from "./GetOptionsOflogins"
+import { MouseEvent, useState } from "react"
 import OptionLoggedIn from "./OptionsLoggedIn"
-import { BasicUsers } from "../../../../typescript/UserTypes"
-
+import { UserLinkImg } from "@/images/linkImg"
+import { LoginIcon } from "@/images/centerIcons"
 const OptionsOfLogin = () => {
-  const cookies = new Cookies()
   const navigate = useNavigate()
   const { langCode, dataUser } = useMyContext()
-  const [loggedIn, setLoggedIn] = useState<boolean>(false)
-  const [basicUser, setBasicUser] = useState<BasicUsers>()
   const [visivle, setVisivle] = useState(false)
-  useEffect(() => {
-    const LoggedInCookies = cookies.get("loggedIn")
-    if (LoggedInCookies) {
-      const localStorageUserName = localStorage.getItem("basicUsers")
-      if (localStorageUserName) {
-        try {
-          const parsedUserName = JSON.parse(localStorageUserName)
-          setLoggedIn(true)
-          setBasicUser(parsedUserName)
-        } catch (error) {
-          console.error("Error parsing JSON:", error)
-        }
-      }
-    }
-  }, [loggedIn, dataUser])
-
+  //------------------------- HANDLE LOGGED IN--------------------------
   const handleAccountLoggedIn = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     e.stopPropagation()
-    navigate(`/${langCode}/user/voucher-wallet`)
+    navigate(`/${langCode}/user/account/profile`)
   }
+  //------------------------- GET ACCOUNT --------------------------
   const getAccountLoggedIn = () => {
+    const Img = dataUser?.img || UserLinkImg
+    const Username = dataUser?.defaultName || dataUser?.username
     return (
       <button
         onMouseEnter={() => setVisivle(true)}
         onMouseLeave={() => setVisivle(false)}
         onClick={handleAccountLoggedIn}
-        className=' px-2 relative  '
+        className=' relative '
       >
-        <div className='flex items-center whitespace-nowrap w-full '>
-          <div className='text-xl mr-1.5 border border-slate-500 p-1 rounded-full bg-white text-slate-500'>
-            {LoginIcon}
+        <div className='flex items-center  whitespace-nowrap w-full '>
+          <div className={`w-8 h-8 `}>
+            <img src={Img} alt='' className='w-full h-full rounded-full shadow border border-gray-100' />
           </div>
-          <p className='hover:text-green-600 font-normal text-sm'>
-            {dataUser?.userName || basicUser?.userName}
-          </p>
+          <p className='hover:text-green-600 block pl-1 tracking-tight  font-normal text-[12.5px]'>{Username}</p>
         </div>
-        {visivle && <OptionLoggedIn setLoggedIn={setLoggedIn} />}
+        {visivle && <OptionLoggedIn />}
       </button>
     )
   }
+  //------------------------- RENDER ELEMENT --------------------------
   return (
-    <section className='flex items-center max-md:text-[14px] text-slate-700 text-base font-semibold'>
-      {loggedIn && getAccountLoggedIn()}
-      {!loggedIn && <GetOptionsOflogins />}
+    <section className='flex pr-2 items-center max-md:text-[14px] text-slate-700 text-base font-semibold'>
+      {dataUser && getAccountLoggedIn()}
+      {/* //------------------------- DATAUSER NOT EXITS RENDER TEXT LOGIN -------------------------- */}
+      {!dataUser && (
+        <Link to={`/${langCode}/login`} className='text-slate-500 hover:text-green-600 flex items-center whitespace-nowrap px-2'>
+          <div className='text-xl pr-1'>{LoginIcon}</div>
+          <p className=' '>Login</p>
+        </Link>
+      )}
     </section>
   )
 }

@@ -1,14 +1,11 @@
 import { useParams } from "react-router-dom"
-import AccountRecommend from "./AccountRecommend"
 import DescribeInforShop from "./DescribeInforShop"
-import SalesUserContent from "./SalesUserContent/SalesUserContent"
 import SalesUserInfor from "./SalesUserInfor/SalesUserInfor"
 import SalesUserNavigate from "./SalesUserNavigate"
 import SalesUserSideBar from "./SalesUserSideBar/SalesUserSideBar"
-import UserVoucher from "./UserVoucher"
 import { useMyContext } from "../../context/context"
 import { ContainLanguages } from "../../languages/Languages"
-import { languageType } from "../../typescript/languageType"
+import { languageType } from "../../typescript/language"
 import { useEffect } from "react"
 import SearchResult from "../Search/Content/SearchResult/SearchResult"
 import { LoadingIcon } from "../../images/centerIcons"
@@ -26,11 +23,7 @@ function SalesUser() {
   }, [setLanguage, setLangCode])
   // nếu ngôn ngữ = null thì xuất ra loading
   if (!language) {
-    return (
-      <div className='text-4xl h-[100vh] flex items-center justify-center text-blue-400 shadow w-full uppercase'>
-        {LoadingIcon}
-      </div>
-    )
+    return <div className='text-4xl h-[100vh] flex items-center justify-center text-blue-400 shadow w-full uppercase'>{LoadingIcon}</div>
   }
   return (
     <div className=''>

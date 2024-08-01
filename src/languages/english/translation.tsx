@@ -35,7 +35,7 @@ const english = {
   },
   center: {
     introduce:
-      "With a commitment to helping people, LiveGood brings you the most advanced nutritional supplements on the market, made with only the purest, highest quality, results-driven ingredients on the planet, without the expensive pricing mark-ups of other companies.",
+      "With a commitment to helping people, Sango brings you the most advanced nutritional supplements on the market, made with only the purest, highest quality, results-driven ingredients on the planet, without the expensive pricing mark-ups of other companies.",
     homeFeatures: HomeFeaturesEN,
     products: {
       totalProducts: "Products",

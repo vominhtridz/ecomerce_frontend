@@ -6,7 +6,7 @@ const manageVoucherNavLink = [
     title: "Tất cả ",
   },
   {
-    title: "Livegood",
+    title: "Sango",
   },
   {
     title: "Shop ",

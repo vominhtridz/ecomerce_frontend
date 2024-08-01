@@ -15,9 +15,7 @@ function SizeProduct() {
           <button className='px-3 py-1 text-slate-500 '>GBM</button>
           <button className='px-3 py-1 bg-blue-700 text-white'>GM</button>
         </div>
-        <select className='flex items-center border border-solid cursor-pointer border-slate-500 px-2 py-1'>
-          {getPrices()}
-        </select>
+        <select className='flex items-center border border-solid cursor-pointer border-slate-500 px-2 py-1'>{getPrices()}</select>
       </nav>
     </section>
   )

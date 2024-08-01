@@ -1,13 +1,14 @@
-import { useNavigate } from "react-router-dom"
-import { useMyContext } from "../../../../../../context/context"
+import { LoadingIcon } from "@/images/centerIcons"
+import { FormEvent } from "react"
 
-const SaveInfoBtn = () => {
-  const { langCode } = useMyContext()
-  const navigate = useNavigate()
-  const handleSavesInfo = () => {}
+interface saveInfoType {
+  handleSave: (e: FormEvent<HTMLButtonElement | HTMLFormElement>) => void
+  loading: boolean
+}
+const SaveInfoBtn = ({ handleSave, loading }: saveInfoType) => {
   return (
-    <button className='px-6 py-2 ml-16 bg-red-500 my-6  text-white rounded-sm' onClick={handleSavesInfo}>
-      Lưu
+    <button disabled={loading == true ? true : false} className='px-6 py-2  bg-green-500   text-white rounded-sm' onClick={handleSave}>
+      {loading ? <p className='text-lg flex items-center justify-center'>{LoadingIcon}</p> : "Gửi"}
     </button>
   )
 }

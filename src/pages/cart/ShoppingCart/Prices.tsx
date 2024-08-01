@@ -16,7 +16,7 @@ const Prices: FC<PricesTypes> = ({ number, handleDecement, ChangeNumber, handleI
         <label className='px-1 line-through'>₫3.990.000</label>
         <label className='px-1'>₫3.690.000</label>
       </div>
-      <nav className='flex items-center pl-9'>
+      <nav className='flex items-center h-8 pl-9'>
         <DecrementBtn handleDecement={handleDecement} />
         <NumberInput number={number} ChangeNumber={ChangeNumber} />
         <IncrementBtn handleIncrement={handleIncrement} />

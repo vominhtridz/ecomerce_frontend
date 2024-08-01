@@ -34,7 +34,7 @@ const Korean = {
   },
   center: {
     introduce:
-      "사람들을 돕기 위한 노력의 일환으로 LiveGood은 다른 회사의 값비싼 가격 인상 없이 지구상에서 가장 순수하고 최고 품질의 결과 중심 성분으로만 만들어진 시장에서 가장 발전된 영양 보충제를 제공합니다.",
+      "사람들을 돕기 위한 노력의 일환으로 Sango 다른 회사의 값비싼 가격 인상 없이 지구상에서 가장 순수하고 최고 품질의 결과 중심 성분으로만 만들어진 시장에서 가장 발전된 영양 보충제를 제공합니다.",
     homeFeatures: HomeFeaturesKO,
     products: {
       totalProducts: "제품",

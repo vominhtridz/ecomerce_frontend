@@ -17,14 +17,14 @@ const MessageShop = () => {
         </nav>
         <nav className='ml-auto'>
           <div className='flex items-center'>
-            <p className='pl-4 pr-10 text-lg'>Đơn vị vận chuyển:</p>
+            <p className='pl-4 pr-10 text-sm'>Đơn vị vận chuyển:</p>
             <div className=''>
               <div className='flex items-center justify-between'>
-                <h2 className='px-1'>Nhanh</h2>
+                <h2 className='px-1 text-sm'>Nhanh</h2>
                 <ChangeBtn handleChange={handleChangeMessage} />
               </div>
-              <div className='text-green-500 flex items-center'>
-                <p className='text-base px-2 text-green-500'>{TrunkFast}</p>
+              <div className='text-green-500 flex text-sm items-center'>
+                <p className='text-sm px-2 text-green-500'>{TrunkFast}</p>
                 Nhận hàng vào 4 Tháng 4 - 5 Tháng 4
               </div>
             </div>
@@ -32,7 +32,7 @@ const MessageShop = () => {
         </nav>
       </div>
       <div className='py-4 flex items-center justify-end w-full'>
-        <p className='text-base text-black'>Tổng số tiền (2 sản phẩm):</p>
+        <p className='text-sm text-black'>Tổng số tiền (2 sản phẩm):</p>
         <p className='px-10 text-red-500'>₫25.001</p>
       </div>
     </div>

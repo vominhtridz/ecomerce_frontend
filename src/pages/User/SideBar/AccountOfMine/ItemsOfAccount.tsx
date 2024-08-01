@@ -11,11 +11,11 @@ const getItemsOfAccount = [
     title: "Ngân Hàng",
   },
   {
-    route: "/adress",
+    route: "/address",
     title: "Địa chỉ",
   },
   {
-    route: "/change-password",
+    route: "/changepwd",
     title: "Đổi mật khẩu",
   },
   {
@@ -34,12 +34,12 @@ const ItemsOfAccount = () => {
         <Link
           to={`/${langCode}/user/account${voucher.route}`}
           key={voucher.title}
-          className={`py-1 hover:text-green-500 ${CheckPath === path ? "text-red-500" : ""} `}
+          className={`py-1 hover:text-green-500 ${CheckPath === path ? "text-green-500" : ""} `}
         >
           {voucher?.title}
         </Link>
       )
     })
-  return <nav className='flex flex-col text-sm  text-slate-600 ml-8 py-1'>{getItems()}</nav>
+  return <nav className='flex flex-col animation duration-300 transition-all text-sm  text-slate-600 ml-8 py-1'>{getItems()}</nav>
 }
 export default ItemsOfAccount

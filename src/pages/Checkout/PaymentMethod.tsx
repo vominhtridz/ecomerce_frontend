@@ -6,11 +6,11 @@ const PaymentMethod = () => {
   const handleSeenRules = () => {}
   const handleOrderPayment = () => {}
   return (
-    <div className='bg-white p-4 rounded-sm text-[15px] shadow '>
+    <div className='bg-white p-4 rounded-sm text-[13px] shadow '>
       <div className='flex items-center border-b border-slate-300 py-4 justify-between w-full'>
-        <h2 className='text-lg font-bold'>Phương thức thanh toán</h2>
+        <h2 className='text-sm font-semibold'>Phương thức thanh toán</h2>
         <div className='flex items-center'>
-          <p className='px-6'>Thanh toán khi nhận hàng</p>
+          <p className='px-6 text-sm'>Thanh toán khi nhận hàng</p>
           <ChangeBtn handleChange={ChangePayment} />
         </div>
       </div>
@@ -32,7 +32,7 @@ const PaymentMethod = () => {
         <nav className='flex items-center'>
           <p>Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo</p>
           <button className='px-2 text-blue-600' onClick={handleSeenRules}>
-            Điều khoản Livegood
+            Điều khoản Sango
           </button>
         </nav>
         <OrderBtn handleOrder={handleOrderPayment} />

@@ -3,10 +3,11 @@ import { Eyeicon, noEyeicon } from "../../../images/centerIcons"
 interface RegisterTypes {
   pwd: string
   Changepwd: (e: ChangeEvent<HTMLInputElement>) => void
+  error?: boolean
 }
-const PasswordInput: FC<RegisterTypes> = ({ pwd, Changepwd }) => {
+const PasswordInput: FC<RegisterTypes> = ({ pwd, Changepwd, error }) => {
   const [visibleEye, setVisibleEye] = useState<boolean>(false)
-
+  const checkErorr = error ? "border-red-500 outline-red-300" : "outline-blue-300 border-slate-400"
   const handleSeePsd = (e: MouseEvent<HTMLLabelElement>) => {
     e.preventDefault()
     e.stopPropagation()
@@ -17,13 +18,14 @@ const PasswordInput: FC<RegisterTypes> = ({ pwd, Changepwd }) => {
       <input
         autoComplete='new-password'
         type={`${visibleEye ? "text" : "password"}`}
-        className='w-full p-4 transition duration-500 outline-blue-300    border my-2  text-black border-slate-400 rounded-sm bg-[#e8f0fe]'
-        placeholder='Enter Your Password'
+        className={`${checkErorr} w-full px-4 py-2.5 outline-blue-300 text-sm transition duration-500   border my-1  text-black  rounded-sm shadow`}
+        placeholder='Password...'
         onChange={Changepwd}
         required
+        id='password'
         value={pwd}
       />
-      <label className='absolute top-7 outline-blue-300  cursor-pointer right-4 text-2xl' onClick={handleSeePsd}>
+      <label className='absolute top-4 outline-blue-300  cursor-pointer right-4 text-xl' onClick={handleSeePsd}>
         {!visibleEye && noEyeicon}
         {visibleEye && Eyeicon}
       </label>

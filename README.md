@@ -1,5 +1,24 @@
-1, học lại cho vững các ngôn ngữ như javascript, typescript
-2, không thích học thì làm client bằng react
-3, việc chuyển đổi ngôn ngữ sử dụng react18l
-thì nó hoạt động bằng cách chuyển đổi ngôn ngữ bằng dạng json theo từng file 
-muốn lấy nó ra thì import useTranslation vào để sử dụng ví dụ như trang home
+1,[] Dọn Dẹp Thư mục, COMMENT, SỬA CHỬA FIX LỖI , VV
+2,[] TỐI ƯU HÓA TÌM KIẾM 
+3,[x] TẠO CLIENT CHO NGƯỜI BÁN SELLER
+4,[] TẠO TABLE DATABASE CHO SELLER ,SELLER  ĐÁNH GIÁ ,
+5,[] TẠO SẢN PHẨM , RENDER TẤT CẢ SẢN PHẨM RA TRANG HOME
+6,[] RENDER RA  THÔNG TIN PRODUCT Ở TRANG  INFOR, CHỈNH SỬA CLIENT
+7,[] XỬ LÝ YÊU THÍCH SẢN PHẨM
+8,[] XỬ LÝ PHẦN ĐÁNH GIÁ SẢN PHẨM, HIỆN THEO OPTION TẤT CẢ 5 SAO VV, RENDER RA ĐÁNH GIÁ , LIKE SHARE ĐÁNH GIÁ SAO HÌNH ẢNH VV
+9,[] XỬ LÝ CHAT VỚI SHOP
+10,[] XỬ LÝ CHAT GIỮA 2 BÊN SHOP VÀ KHÁCH HÀNG
+10,[] THÊM CÁC CHỨC NĂNG CHAT TỰ ĐỘNG , CHAT NHANH, CÂU TRẢ LỜI CÓ SẴN
+10,[] XỬ LÝ CHAT KHÁCH HÀNG VỚI SHOP CÓ ICON,  HÌNH ẢNH VIDEO, FILE, VÂN VÂN
+10,[] LỌC TIN NHẮN THEO OPTION TẤT CẢ, CHƯA ĐỌC, ĐÃ GIM
+10,[] XỬ LÝ ĐÁNH DẤU ĐÃ ĐỌC, GHIM TRÒ CHUYỆN , TẮT THÔNG BÁO, XÓA TRÒ CHUYỆN
+10,[] XỬ LÝ TÌM KIẾM TIN NHẮN THEO TÊN SHOP
+10,[] XỬ LÝ XEM SHOP
+11,[] XỬ LÝ ROUTE TRONG TRANG THÔNG TIN NGƯỜI BÁN,ĐANG ONL HAY OFFLINE, XEM THÔNG TIN, CÁC PHẦN ĐÁNH GIÁ , HÌNH ẢNH , THEO GIÕI, CHÁT NGAY, DANH MỤC RIÊNG CỦA SHOP, TÌM KIẾM SẢN PHẨM CỦA SHOP 
+12,[] XỬ LÝ CHAT VỚI SHOP
+13,[] XỬ LÝ ROUTE TRANG INFOR PRODUCT
+14,[] XỬ LÝ HIỆN PRODUCT TRONG GIỎ HÀNG , THAO TÁC THÊM XÓA SẢN PHẨM , PHÂN LOẠI, TÍNH TIỀN 
+14,[] XỬ LÝ ĐỊA CHỈ NHẬN HÀNG , THAY ĐỔI ĐỊA CHỈ, CHÁT NGAY VỚI SHOP, XEM THÔNG TIN SHOP, HIỆN  THÔNG TIN TIỀN, SỐ LƯỢNG THÀNH TIỀN, XỬ LÝ LỜI NHẮN , CHỈNH SỬA VẬN CHUYỂN, NGÀY HOÀN THÀNH , PHƯƠNG THỨC THANH TOÁN (TRỰC TIẾP)
+14,[] XỬ LÝ ĐẶT HÀNG 
+14,[] XỬ LÝ XEM ĐƠN MUA TẠI TRANG USER
+

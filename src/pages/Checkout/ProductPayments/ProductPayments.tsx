@@ -7,7 +7,7 @@ const ProductPayments = () => {
   const getProductPayments = () =>
     manageProductPayments.map((item, index) => {
       return (
-        <div className='px-11 text-[16px] text-slate-400 ' key={index}>
+        <div className='px-11 text-[14px] text-slate-400 ' key={index}>
           {item}
         </div>
       )
@@ -15,8 +15,8 @@ const ProductPayments = () => {
   return (
     <div className='my-4 shadow rounded-sm text-[13px] w-full bg-white px-4 py-8'>
       <nav className='flex justify-between w-full'>
-        <h2 className='text-lg font-bold'>Sản phẩm</h2>
-        <div className='flex items-center'>{getProductPayments()}</div>
+        <h2 className='text-xl'>Sản phẩm</h2>
+        <div className='flex text-sm items-center'>{getProductPayments()}</div>
       </nav>
       <nav className='flex items-center my-1'>
         <div className='flex items-center pr-2 border-r mr-4 border-slate-300 '>

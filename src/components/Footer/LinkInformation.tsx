@@ -9,10 +9,7 @@ function LinkInformation() {
   }
   return (
     <section className='right max-lg:w-full h-full overflow-hidden object-cover flex items-center flex-col justify-center'>
-      <button
-        onClick={handleBackHome}
-        className='flex justify-center items-center w-full'
-      >
+      <button onClick={handleBackHome} className='flex justify-center items-center w-full'>
         <img src={logo} alt='logo' className=' h-[72px] max-lg:h-full text-white' />
       </button>
       <nav className='flex items-center justify-center'>
@@ -30,7 +27,7 @@ function LinkInformation() {
         1201 Jupiter Park Dr. Unit 5 <br />
         Jupiter, FL 33458
       </span>
-      <p className='text-lg p-0 m-0 text-center hover:text-white'>support@livegood.com</p>
+      <p className='text-lg p-0 m-0 text-center hover:text-white'>Sango.com</p>
     </section>
   )
 }

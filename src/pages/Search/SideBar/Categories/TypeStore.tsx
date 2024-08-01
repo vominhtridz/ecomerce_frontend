@@ -2,13 +2,13 @@ import AddBtn from "../../../../components/button/AddBtn"
 
 const ManageTypeStore = [
   {
-    title: "Livegood Mail",
+    title: "Sango Mail",
   },
   {
     title: "Shop Yêu thích",
   },
   {
-    title: "Xử lý hàng bởi livegood",
+    title: "Xử lý hàng bởi Sango",
   },
   {
     title: "Shop yêu thích +",

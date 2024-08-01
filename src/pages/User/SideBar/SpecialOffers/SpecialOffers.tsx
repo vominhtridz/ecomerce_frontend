@@ -1,18 +1,25 @@
 import { NewIcon } from "../../../../images/centerIcons"
 import { useMyContext } from "../../../../context/context"
 import VoucherForYou from "./VoucherForYou"
-export const SpecialOffers = () => {
+import { Link } from "react-router-dom"
+import { SidebarItemType } from "@/typescript/UserTypes"
+
+export const SpecialOffers = ({ setvisibleItems, visibleItems }: SidebarItemType) => {
   const { langCode } = useMyContext()
-  const handleShow = () => {}
+  const handleShow = () => setvisibleItems("voucher")
+
   return (
     <div className='py-1'>
-      <button className='flex ' onClick={handleShow}>
+      <Link
+        to={`/${langCode}/user/voucher`}
+        onClick={handleShow}
+        className='flex text-[14px] whitespace-nowrap hover:text-green-600 leading-4'
+      >
         <p className='text-2xl mr-1.5 text-black rounded-full'>{NewIcon}</p>
-        <p className='text-[14px] whitespace-nowrap hover:text-green-600 leading-4'>
-          Ưu Đãi Dành riêng <br /> cho bạn
-        </p>
-      </button>
-      <VoucherForYou />
+        Ưu Đãi Dành riêng <br /> cho bạn
+      </Link>
+
+      {visibleItems == "voucher" ? <VoucherForYou /> : ""}
     </div>
   )
 }

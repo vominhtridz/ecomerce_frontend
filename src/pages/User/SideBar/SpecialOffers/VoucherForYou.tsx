@@ -12,7 +12,7 @@ const getVoucherForYou = [
   },
   {
     route: "/supercheap",
-    title: "LiveGood siêu rẻ",
+    title: "Sango siêu rẻ",
   },
   {
     route: "/discount-code",

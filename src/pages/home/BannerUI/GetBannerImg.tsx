@@ -13,13 +13,14 @@ export const GetBannerImg = () => {
     return () => clearInterval(RenderImg2s)
   }, [])
   return BannerImgs.map((banner: bannerType, index: number) => {
+    const conditionStatement = {
+      marginLeft: 0 === index ? `${increment}%` : "",
+    }
     return (
       <img
         key={index}
         src={banner.img}
-        style={{
-          marginLeft: 0 === index ? `${increment}%` : "",
-        }}
+        style={conditionStatement}
         className={` w-full  object-cover transition-all scroll-smooth duration-500`}
         id='BannerHomeImg'
         alt='banner'

@@ -30,14 +30,16 @@ const ItemsNotifyCations = () => {
   const getItemsNotifyCations = () => {
     return manageItemsNotifyCations.map((notifycation, index) => {
       return (
-        <div className='flex items-center justify-between ' key={index}>
-          <nav className='text-black text-[17px]'>
+        <div className='flex items-center my-6 justify-between select-none' key={index}>
+          <nav className='text-black text-[16px]'>
             {notifycation?.title}
-            <p className='text-sm text-slate-500'>{notifycation?.content}</p>
+            {notifycation?.content && <p className='text-[11px] leading-3 text-slate-500'>{notifycation?.content}</p>}
           </nav>
-          <nav className='flex items-center my-[1.2rem]'>
-            <input type='checkbox' className='text-white bg-red-500 mx-2 p-2 w-[20px] h-[20px]' />
-            <p className='text-[15.5px]'>{notifycation?.check}</p>
+          <nav className='flex  '>
+            <input type='checkbox' id={notifycation?.title} className='text-white bg-red-500 mx-2 p-2 w-[18px] h-[18px]' />
+            <label htmlFor={notifycation?.title} className='select-none text-[14px]'>
+              {notifycation?.check}
+            </label>
           </nav>
         </div>
       )

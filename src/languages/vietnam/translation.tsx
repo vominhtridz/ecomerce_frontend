@@ -34,7 +34,7 @@ const VietNam = {
   },
   center: {
     introduce:
-      "Với cam kết giúp đỡ mọi người, LiveGood mang đến cho bạn những sản phẩm bổ sung dinh dưỡng tiên tiến nhất trên thị trường, được sản xuất chỉ bằng những thành phần tinh khiết nhất, chất lượng cao nhất, hướng đến kết quả trên hành tinh mà không có sự chênh lệch giá đắt đỏ của các công ty khác.",
+      "Với cam kết giúp đỡ mọi người, Sango mang đến cho bạn những sản phẩm bổ sung dinh dưỡng tiên tiến nhất trên thị trường, được sản xuất chỉ bằng những thành phần tinh khiết nhất, chất lượng cao nhất, hướng đến kết quả trên hành tinh mà không có sự chênh lệch giá đắt đỏ của các công ty khác.",
     homeFeatures: HomeFeaturesVI,
     products: {
       totalProducts: "Sản phẩm",

@@ -1,38 +1,37 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { ContainLanguages } from "../../languages/Languages"
-import { languageType } from "../../typescript/languageType"
+import { languageType } from "../../typescript/language"
 import { useMyContext } from "../../context/context"
 import SideBar from "./SideBar/SideBar"
-import PageVoucherStore from "./Content/SpecialOffers/VoucherStore/PageVoucherStore"
-import PageUserNotifyCations from "./Content/Account/NotifyCations/NotifyCations"
-import { LoadingIcon } from "../../images/centerIcons"
-
+import { Outlet } from "react-router-dom"
+import { LoadingIcon } from "@/images/centerIcons"
 export const PageUsers = () => {
   const { lang } = useParams()
-  const { language, setLanguage, setLangCode } = useMyContext()
-  const [PageUsers, setPageUsers] = useState<[]>()
-  //khi render ra component home kiểm tra link language in prams  để setup cho state ở usecontext và truyền đi qua
-  //componet cha là defaultLayout để render ra header và footer
+  let [loadingPage, setloadingPage] = useState<boolean>(true)
+  const { setLanguage, setLangCode, language } = useMyContext()
   useEffect(() => {
     if (lang && ContainLanguages.hasOwnProperty(lang)) {
       setLanguage(ContainLanguages[lang] as languageType)
       setLangCode(lang)
+      setTimeout(() => {
+        setloadingPage(false)
+      }, 1000)
     }
-  }, [setLanguage, setLangCode])
-  // nếu ngôn ngữ = null thì xuất ra loading
-  if (!language) {
-    return (
-      <div className='text-4xl h-[100vh] flex items-center justify-center text-blue-400 shadow w-full uppercase'>
-        {LoadingIcon}
-      </div>
-    )
-  }
+  }, [language])
+
   return (
-    <section className='flex  px-10 py-14 '>
-      <SideBar />
-      {/* <PageProfile /> */}
-      <PageUserNotifyCations />
+    <section>
+      <div className='flex  px-4 py-2'>
+        <SideBar />
+        <div className='border border-gray-200 ml-2 w-full shadow'>
+          {loadingPage ? (
+            <p className='text-5xl flex w-full h-full items-center justify-center text-blue-500'>{LoadingIcon}</p>
+          ) : (
+            <Outlet />
+          )}
+        </div>
+      </div>
     </section>
   )
 }

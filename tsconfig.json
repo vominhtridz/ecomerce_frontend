@@ -7,6 +7,7 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
       "firebase": ["node_modules/firebase"]
     },
     /* Bundler mode */
@@ -23,6 +24,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "node_modules/@react-oauth/google", "src/pages/Seller/Home/Content/Content.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

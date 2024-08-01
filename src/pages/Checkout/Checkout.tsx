@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useMyContext } from "../../context/context"
-import { languageType } from "../../typescript/languageType"
+import { languageType } from "../../typescript/language"
 import { ContainLanguages } from "../../languages/Languages"
 import { useEffect } from "react"
 import DeliveryAddress from "./DeliveryAddress"

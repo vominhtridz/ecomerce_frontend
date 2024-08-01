@@ -1,12 +1,13 @@
 import { ChangeEvent, FC, useState } from "react"
 import { Eyeicon, noEyeicon } from "../../../images/centerIcons"
-interface RegisterTypes {
+interface confrimPwdType {
   conFirmPwd: string
   ChangeConfirm: (e: ChangeEvent<HTMLInputElement>) => void
+  error: boolean
 }
-const ConfirmPwd: FC<RegisterTypes> = ({ conFirmPwd, ChangeConfirm }) => {
+const ConfirmPwd: FC<confrimPwdType> = ({ conFirmPwd, ChangeConfirm, error }) => {
   const [confirm, setConfirm] = useState<boolean>(false)
-
+  const checkErorr = error ? "border-red-500 outline-red-300" : "outline-blue-300 border-slate-400"
   const handleConfirmPsd = () => {
     setConfirm(!confirm)
   }
@@ -14,14 +15,14 @@ const ConfirmPwd: FC<RegisterTypes> = ({ conFirmPwd, ChangeConfirm }) => {
     <nav className='relative'>
       <input
         type={`${confirm ? "text" : "password"}`}
-        className='w-full p-4 transition duration-500   border my-2  text-black border-slate-400 rounded-sm bg-[#e8f0fe]'
-        placeholder='Confirm Password'
+        className={`${checkErorr} w-full px-4 py-2.5   text-sm transition duration-500   border my-1  text-black rounded-sm shadow`}
+        placeholder='Xác nhận mật khẩu'
         value={conFirmPwd}
         onChange={ChangeConfirm}
         autoComplete='new-password'
         required
       />
-      <label className='absolute top-7 right-4 cursor-pointer text-2xl' onClick={handleConfirmPsd}>
+      <label className='absolute top-4 right-4 cursor-pointer text-xl' onClick={handleConfirmPsd}>
         {!confirm && noEyeicon}
         {confirm && Eyeicon}
       </label>

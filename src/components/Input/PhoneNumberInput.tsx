@@ -1,17 +1,24 @@
-import { ChangeEvent, FC } from "react"
+import { FC } from "react"
 
 interface PhoneNumberInputTypes {
-  number: number
-  handleChangeNumber: (e: ChangeEvent<HTMLInputElement>) => void
+  number: string
+  handleChangeNumber: (e: string) => void
+  disable?: boolean
+  error?: boolean
 }
-const PhoneNumberInput: FC<PhoneNumberInputTypes> = ({ handleChangeNumber, number }) => {
+const PhoneNumberInput: FC<PhoneNumberInputTypes> = ({ handleChangeNumber, number, disable, error }) => {
+  const checkError = error ? "border-red-500 outline-red-500" : " border-slate-400 outline-none"
+  const checkDisable = disable ? "bg-gray-100 opacity-90" : ""
   return (
     <input
-      type='number'
+      disabled={disable}
+      autoFocus
+      id='phonenumber'
+      type='text'
       required
       placeholder='Nhập vào...'
-      className='pl-3 pr-1 py-2 rounded-sm  w-full border border-slate-400 outline-none text-sm'
-      onChange={handleChangeNumber}
+      className={`${checkDisable} ${checkError} pl-3 pr-1 py-1.5 rounded-sm  w-full border text-sm`}
+      onChange={e => handleChangeNumber(e.target.value)}
       value={number}
     />
   )

@@ -1,18 +1,25 @@
-import { useRef, useState } from "react"
+import { ChangeEvent, useRef } from "react"
 import { LoginIcon } from "../../../../../../images/centerIcons"
-const SetUpUserImage = () => {
-  const [file, setFile] = useState<string>("")
+interface UserImageType {
+  setImg: (e: string) => void
+  img: string
+  file: any
+  setFile: (e: any) => void
+}
+export const UserImage = ({ setImg, img, setFile }: UserImageType) => {
   const fileUserImg = useRef<HTMLInputElement>(null)
-  function handleChange(e) {
-    setFile(URL.createObjectURL(e.target.files[0]))
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0]
+    console.log(e)
+    setFile(selectedFile)
+    setImg(URL.createObjectURL(selectedFile as File))
   }
+
   const handleSetImage = () => fileUserImg.current?.click()
   return (
-    <div className='border-l border-slate-400 flex p-4 flex-col items-center px-10'>
-      {file && (
-        <img src={file} className='w-[130px] rounded-full cursor-pointer    h-[130px] my-8' onClick={handleSetImage} />
-      )}
-      {!file && (
+    <div className='border-l border-slate-400 flex w-1/2 flex-col items-center px-10'>
+      {img && <img src={img} className='w-[130px] rounded-full cursor-pointer    h-[130px] my-8' onClick={handleSetImage} />}
+      {!img && (
         <div
           onClick={handleSetImage}
           className='cursor-pointer w-[130px] text-[5rem] border border-slate-300 flex items-center justify-center rounded-full    h-[130px] my-8'
@@ -21,7 +28,7 @@ const SetUpUserImage = () => {
         </div>
       )}
 
-      <input type='file' multiple onChange={handleChange} ref={fileUserImg} name='fileUserImg' className='hidden' />
+      <input type='file' multiple onChange={handleChange} ref={fileUserImg} name='fileUserImg' accept='image/*' className='hidden' />
       <label
         htmlFor='fileUserImg'
         className='border border-slate-400  rounded-sm cursor-pointer inline-block hover:bg-slate-50 px-4 py-1.5 text-sm'
@@ -37,4 +44,4 @@ const SetUpUserImage = () => {
     </div>
   )
 }
-export default SetUpUserImage
+export default UserImage

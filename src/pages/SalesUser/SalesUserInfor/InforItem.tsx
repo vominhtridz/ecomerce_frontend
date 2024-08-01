@@ -2,7 +2,7 @@ import { LoginIcon, NoStar, Star, StoreWhiteIcon } from "../../../images/centerI
 
 const InforItem = () => {
   return (
-    <div className='flex px-6  text-[14px]'>
+    <div className='flex px-6 pl-auto  text-[14px]'>
       <nav className=''>
         <div className='flex items-center text-slate-500 py-2.5 px-6  whitespace-nowrap'>
           <p className='text-lg text-black'>{StoreWhiteIcon}</p>

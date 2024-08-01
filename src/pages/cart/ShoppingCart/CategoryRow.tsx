@@ -8,8 +8,9 @@ import { DownWhiteIcon } from "../../../images/centerIcons"
 interface CategoryRowTypes {
   handleShowClasify: () => void
   visible: boolean
+  handleclick: () => void
 }
-const CategoryRow: FC<CategoryRowTypes> = ({ handleShowClasify, visible }) => {
+const CategoryRow: FC<CategoryRowTypes> = ({ handleShowClasify, visible, handleclick }) => {
   return (
     <button className='relative' onClick={handleShowClasify}>
       <div className='flex items-center whitespace-nowrap'>
@@ -18,15 +19,11 @@ const CategoryRow: FC<CategoryRowTypes> = ({ handleShowClasify, visible }) => {
       </div>
       <p className='text-base'>Xanh</p>
       {visible && (
-        <div className='absolute top-full right-0 px-4 py-4 bg-white shadow rounded-sm border border-slate-200'>
+        <div className='absolute top-full right-0 px-4 py-4 bg-white shadow rounded-sm border border-slate-200' onClick={handleclick}>
           <div className='flex items-center'>
             <p className=''>Màu:</p>
             <BlueBtn />
             <BlackBtn />
-          </div>
-          <div className='my-5 flex items-center'>
-            <BackBtn />
-            <AcceptBtn />
           </div>
         </div>
       )}

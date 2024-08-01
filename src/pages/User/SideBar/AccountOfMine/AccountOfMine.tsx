@@ -1,17 +1,23 @@
+import { Link } from "react-router-dom"
 import { LoginIcon } from "../../../../images/centerIcons"
 import ItemsOfAccount from "./ItemsOfAccount"
+import { useMyContext } from "@/context/context"
+import { SidebarItemType } from "@/typescript/UserTypes"
 
-export const AccountOfMine = () => {
-  const handleShow = () => {}
+export const AccountOfMine = ({ setvisibleItems, visibleItems }: SidebarItemType) => {
+  const { langCode } = useMyContext()
+  const handleShow = () => setvisibleItems("account")
   return (
     <div className='py-2'>
-      <button className='flex items-center' onClick={handleShow}>
+      <Link
+        to={`/${langCode}/user/account/profile`}
+        onClick={handleShow}
+        className='text-[14px] flex items-center whitespace-nowrap text-black hover:text-green-600 leading-4'
+      >
         <p className='text-2xl mr-1.5 text-blue-500 rounded-full'>{LoginIcon}</p>
-        <p className='text-[14px] whitespace-nowrap text-black block hover:text-green-600 leading-4'>
-          Tài khoản của tôi
-        </p>
-      </button>
-      <ItemsOfAccount />
+        Tài khoản của tôi
+      </Link>
+      {visibleItems == "account" ? <ItemsOfAccount /> : ""}
     </div>
   )
 }
